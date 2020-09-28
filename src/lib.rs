@@ -1,9 +1,14 @@
 use std::fs;
-use std::env;
+use std::process::exit;
 
 pub fn read_file(filename: &str) -> String {
-    fs::read_to_string(filename)
-        .expect("Something went wrong reading the file.")
+   match fs::read_to_string(filename) {
+         Ok(contents) => contents,
+         Err(_) => {
+            println!("The input file was not found.");
+             exit(1);
+         }
+     }
 }
 
 pub fn remove_comments(contents: String) -> String {
