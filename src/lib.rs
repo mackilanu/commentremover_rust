@@ -5,7 +5,7 @@ pub fn read_file(filename: &str) -> String {
    match fs::read_to_string(filename) {
          Ok(contents) => contents,
          Err(_) => {
-            println!("The input file was not found.");
+             println!("The input file was not found.");
              exit(1);
          }
      }
@@ -29,6 +29,5 @@ pub fn remove_comments(contents: String) -> String {
             contents_new.push('\n');
         }
     }
-    
     contents_new
 }
