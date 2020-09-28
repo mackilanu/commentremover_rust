@@ -6,6 +6,7 @@ A simple program that removes comments from files.
 Input
 ```rust
 use std::fs;
+
 //This comment will be removed
 fn main() {
     //This comment will also be removed
